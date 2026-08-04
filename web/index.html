@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Optical Capacity Field Pattern</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <section class="controls">
+        <div>
+          <p class="eyebrow">Optical Capacity Lab</p>
+          <h1>4K field pattern</h1>
+          <p>
+            Pre-encoded RS(255,204) frames using sixteen shapes and four colors.
+            Put this display at maximum brightness and record the square at 4K60.
+          </p>
+        </div>
+        <label>Cell pitch
+          <select id="pitch">
+            <option value="7">7 px</option>
+            <option value="8">8 px</option>
+            <option value="9" selected>9 px</option>
+            <option value="10">10 px</option>
+          </select>
+        </label>
+        <label>Transmit rate
+          <select id="fps">
+            <option>1</option>
+            <option>15</option>
+            <option>30</option>
+            <option selected>60</option>
+          </select>
+        </label>
+        <button id="toggle">Start</button>
+        <button id="fullscreen" class="secondary">Fullscreen</button>
+        <dl>
+          <div><dt>rendered</dt><dd id="rendered">—</dd></div>
+          <div><dt>displayed</dt><dd id="displayed">—</dd></div>
+          <div><dt>frame</dt><dd id="frame">1</dd></div>
+          <div><dt>actual rate</dt><dd id="actual">0 fps</dd></div>
+        </dl>
+        <p class="warning">
+          This viewer tests the display/camera path; it is not yet a receiver.
+          Browser scaling must leave at least the selected number of physical
+          display pixels per cell.
+        </p>
+      </section>
+      <section class="stage" id="stage">
+        <canvas id="pattern" width="2160" height="2160"></canvas>
+      </section>
+    </main>
+    <script src="frames.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

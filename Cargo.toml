@@ -1,0 +1,17 @@
+[package]
+name = "optical-capacity-lab"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Reproducible capacity experiments for a high-density screen-to-camera optical channel"
+
+[dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.6.5", features = ["derive"] }
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+rayon = "1.12.0"
+reed-solomon = "0.2.1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
